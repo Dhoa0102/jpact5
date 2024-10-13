@@ -41,7 +41,7 @@ public class CategoryServices implements ICategoryService{
 
 	@Override
 	public List<Category> findAll(int page, int pagesize) {
-		return cateDao.findAll();
+		return cateDao.findAll(page, pagesize);
 	}
 
 	@Override

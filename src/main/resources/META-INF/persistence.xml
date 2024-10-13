@@ -6,6 +6,7 @@
 	version="3.0">
 	<persistence-unit name="jpa-hibernate-sql">
 	
+	
 		<properties>
 			<property name="jakarta.persistence.jdbc.url"
 				value="jdbc:sqlserver://localhost:1433;databaseName=jpact5;encrypt=false" />

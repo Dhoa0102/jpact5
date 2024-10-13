@@ -9,9 +9,9 @@
 			<img height="150" width="200" src="${imgUrl}" />
 	<input type="file" id="images" name="images"><br>
 	<p>Status</p>
-	<input type="radio" id="ston" name="status" value="1" checked }>
+	<input type="radio" id="ston" name="status" value="1" checked >
 	<label for="html">Dang hoat dong</label><br>
-	<input type="radio" id="stoff" name="status" value="0" }>
+	<input type="radio" id="stoff" name="status" value="0" >
 	<label for="css">Khoa</label><br>
 	<input type="submit" value="insert">
 </form>

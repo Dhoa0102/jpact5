@@ -108,5 +108,45 @@ public class UserDaoImpl implements IUserDao {
 		return ((Long)query.getSingleResult()).intValue();
 
 	}
+	@Override
+	public boolean checkExistUsername(String username) {
+		EntityManager enma=JPAConfig.getEntityManager();
+		User user=enma.find(User.class, username);
+		if(user!=null)
+			return false;
+		else 
+			return true;
+	}
 
+	@Override
+	public boolean checkExistEmail(String email) {
+		EntityManager enma = JPAConfig.getEntityManager();
+	    try {
+	        String jpql = "SELECT COUNT(u) FROM User u WHERE u.email = :email";
+	        Long count = enma.createQuery(jpql, Long.class)
+	                         .setParameter("email", email)
+	                         .getSingleResult();
+	        return count > 0;
+	    } finally {
+	        if (enma != null && enma.isOpen()) {
+	            enma.close();
+	        }
+	    }
+	}
+
+	@Override
+	public boolean checkExistPhone(String phone) {
+		EntityManager enma = JPAConfig.getEntityManager();
+	    try {
+	        String jpql = "SELECT COUNT(u) FROM User u WHERE u.phone = :phone";
+	        Long count = enma.createQuery(jpql, Long.class)
+	                         .setParameter("phone", phone)
+	                         .getSingleResult();
+	        return count > 0;
+	    } finally {
+	        if (enma != null && enma.isOpen()) {
+	            enma.close();
+	        }
+	    }
+	}
 }

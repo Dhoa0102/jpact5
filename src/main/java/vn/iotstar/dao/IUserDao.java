@@ -13,4 +13,7 @@ public interface IUserDao {
 	List<User> findAll();
 	List<User> findAll(int page,int pagesize);
 	int count();
+	boolean checkExistUsername(String username);
+	boolean checkExistEmail(String email);
+	boolean checkExistPhone(String phone);
 }

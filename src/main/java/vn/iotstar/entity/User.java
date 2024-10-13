@@ -42,6 +42,8 @@ public class User implements Serializable{
 	@Column(name="Password", columnDefinition = "nvarchar(255)")
 	private String password;
 	
-	@Column(name="Images", columnDefinition = "longtext")
+	@Column(name="Images")
 	private String images;
+	
 }
+
